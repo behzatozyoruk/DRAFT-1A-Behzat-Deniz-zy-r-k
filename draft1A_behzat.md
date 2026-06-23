@@ -27,6 +27,7 @@ Such a pair $(X, \Sigma)$ is called a measurable space. Almost every object in m
 Here is how we formally assign "sizes" to these well-behaved sets.
 
 **Definition:** Given a measurable space $(X, \Sigma)$, a *measure* is a function $\mu : \Sigma \rightarrow [0, \infty]$ such that $\mu(\emptyset) = 0$ and given a pairwise disjoint family of sets $\lbrace A_{n} : n \in \mathbb{N} \rbrace$ in $\Sigma$, we have $\mu(\bigcup_{n \in \mathbb{N}} A_{n}) = \sum_{n \in \mathbb{N}} \mu(A_{n})$.
+
 An immediate property that can be concluded from this definition is that a measure is monotone: $A\subset B\Rightarrow\mu(A)\le\mu(B)$.
 
 The Lebesgue measure on $\mathbb{R}$ is a well-known measure which is defined as follows. First of all, given an interval $I=[a,b]$, its length is defined as $l(I)=b-a$.
