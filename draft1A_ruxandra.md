@@ -20,7 +20,7 @@ Many real-world models have an intrinsic continuous nature (for instance, the mo
 
 A convenient representation of discrete systems is given by labelled transition systems (LTSs).
 
-**Example 1.** We can model a vending machine as a labelled transition system, with the states being given by the instructions provided by the machine, such as \`Place cup' and \`Choose':
+**Example 1.** We can model a vending machine as a labelled transition system, with the states being given by the instructions provided by the machine, such as `Place cup` and `Choose`:
 
 ![Example 1](figures/fig1.svg)
 
@@ -37,12 +37,11 @@ Note that the two vending machines behave differently: in the first machine, the
 
 In general, we would want define a sensible notion of equivalence for LTSs. One first attempt could be to look at the language the systems accept. In our case, both machines accept the language $[\text{cup}; (\text{coffee} + \text{tea})]^*$, so this notion is clearly not strong enough. A better option is to look at a finer level, at pairs of states; we expect states that are equivalent to remain equivalent as they evolve, and so we check whether this natural condition is indeed obeyed:
 
-**Definition 4.** Define a bisimulation relation $\sim$ on $S$ by $s \sim t$ if the following  holds:
-$\forall s' \in S, \forall a \in \mathcal{A}, \text { if } s \xrightarrow{a} s' \text{ then } \exists t'\ \in S \text { with } t \xrightarrow{a} t' \text{ such that } s' \sim t'$ and vice versa.[^2]
+**Definition 4.** Define a bisimulation relation $\sim$ on $S$ by $s \sim t$ if the following  holds: $$\forall s' \in S, \forall a \in \mathcal{A}, \text { if } s \xrightarrow{a} s' \text{ then } \exists t'\ \in S \text { with } t \xrightarrow{a} t' \text{ such that } s' \sim t', \text{ and vice versa.}$$
+
+Now, using our definition[^2], the `Choose` state of the functional vending machine is clearly not equivalent to either of the `Choose` states of the faulty one, and so the two systems are indeed not equivalent.
 
 [^2]: At first glance, the definition might seem circular. However, this definition can be shown to be equivalent to an inductive definition. We omit the discussion here, but we refer the reader to *Sangiorgi, Davide (2011). An introduction to Bisimulation and Coinduction. Cambridge, UK: Cambridge University Press.*
-
-Now, using our definition, the \`Choose' state of the functional vending machine is clearly not equivalent to either of the `Choose' states of the faulty one, and so the two systems are indeed not equivalent.
 
 ## Labelled Markov chains
 
