@@ -1,4 +1,4 @@
-## CONTINUOUS STATE SPACES: THE NEED FOR MEASURE THEORY
+## Continuous state spaces: The need for measure theory
 
 In a standard discrete labelled Markov chain, transitions are straightforward. If our system is in state $s$, the environment can trigger an interaction (a label $l$), and the system will jump to a new state $s^{\prime}$ with a specific probability. We can write this as a transition matrix $P_{l}(s,s^{\prime})$. What if the state space is not discrete, say, it is a "continuous" space such as $\mathbb{R}^{n}$? Can we define transition probabilities in a similar fashion? 
 
@@ -54,9 +54,9 @@ If $m(V) = 0$, this implies $1 \leq 0$ and if $m(V) > 0$ this implies $\sum_{k \
 
 ---
 
-## LABELLED MARKOV PROCESSES IN THIS SETTING
+## Labelled Markov processes in this setting
 
-In this measure-theoretic setting, we can now safely assign transition probabilities. A measure $p$ on a measurable space $(X, \Sigma)$ is called a *probability measure* if $p(X)=1$. Now, let us define Markov kernels.
+In this measure-theoretic setting, we can now safely assign transition probabilities. Note that a measure $p$ on a measurable space $(X, \Sigma)$ is called a *probability measure* if $p(X)=1$. Now, let us define Markov kernels.
 
 **Definition:** Given measurable spaces $(X, \Sigma)$ and $(Y, \Lambda)$, a *Markov kernel* $T$ from $(X, \Sigma)$ to $(Y, \Lambda)$ is a function:
 $$T:X\times\Lambda\rightarrow[0,1]$$
@@ -91,7 +91,7 @@ This is in fact the usual simulation on the underlying labelled transition syste
 
 ---
 
-## BISIMULATION FOR MARKOV PROCESSES
+## Bisimulation for Markov processes
 
 A simulation morphism simply means the target system can at least match the probabilistic moves of the source. Tightening the inequality given by the simulation to a strict equality $k_{l}(s,f^{-1}(A^{\prime}))=k_{l}^{\prime}(f(s),A^{\prime})$ ensures that no probabilities are lost or gained along the mapping. Furthermore, by demanding the morphism be surjective, we guarantee that no state in the target is left unaccounted for.
 
