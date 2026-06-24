@@ -12,7 +12,9 @@ Given an abstract system, we often want to reduce it to an equivalent smaller sy
 The notion of bisimulation proves to be a natural choice for defining equivalence. It also happens to have a very convenient categorical characterisation.
 
 #### Why continuous models?
-Many real-world models have an intrinsic continuous nature (for instance, the movement of an aircraft or the pressure of a gas in a tank). Often, the state space can be discretized, but how can we tell if the discretized system faithfully represents the continuous system? What if we need a finer approximation? We will make a case for a discrete time, continuous state space model\footnote{ Eventually, we would also want a fully continuous model; however, this will require a very different set of technical tools, namely stochastic differential equations.}, introduce tools from measure theory, and discuss a sensible notion of bisimulation in this case.
+Many real-world models have an intrinsic continuous nature (for instance, the movement of an aircraft or the pressure of a gas in a tank). Often, the state space can be discretized, but how can we tell if the discretized system faithfully represents the continuous system? What if we need a finer approximation? We will make a case for a discrete time, continuous state space model [^1], introduce tools from measure theory, and discuss a sensible notion of bisimulation in this case.
+
+[^1]: Eventually, we would also want a fully continuous model; however, this will require a very different set of technical tools, namely stochastic differential equations.
 
 ## Labelled transition systems
 
@@ -37,9 +39,9 @@ In general, we would want define a sensible notion of equivalence for LTSs. One 
 
 **Definition 4.** Define a bisimulation relation $\sim$ on $S$ by $s \sim t$ if the following  holds:
 $$\forall s' \in S, \forall a \in \mathcal{A}, \text { if } s \xrightarrow{a} s' \text{ then } \exists t'\ \in S \text { with } t \xrightarrow{a} t' \text{ such that } s' \sim t'$$
-and vice versa.
+and vice versa.[^2]
 
-\footnote{At first glance, the definition might seem circular. However, we can show that this definition is equivalent to an inductive definition. We omit the discussion here, but we refer the reader to ..}
+[^2]: At first glance, the definition might seem circular. However, this definition can be shown to be equivalent to an inductive definition. We omit the discussion here, but we refer the reader to *Sangiorgi, Davide (2011). An introduction to Bisimulation and Coinduction. Cambridge, UK: Cambridge University Press.*
 
 Now, using our definition, the \`Choose' state of the functional vending machine is clearly not equivalent to either of the `Choose' states of the faulty one, and so the two systems are indeed not equivalent.
 
