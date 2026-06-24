@@ -27,7 +27,7 @@ In general, we define this class of systems as follows:
 Note that the definition allows nondeterminism: the transition relation need not be a single pair of states, but a set of pairs. So we can also model the following vending machine:
 
 **Example 3.**
-(add picture 2)
+![Example 3](figures/fig2.svg)
 
 Note that the two vending machines behave differently: in the first machine, the user (the environment) is given the choice between coffee and tea; meanwhile, the second machine gives the user no choice, the choice happening internally. How can express this and differentiate between the faulty machine and the functional one? 
 
@@ -50,7 +50,10 @@ Often, we need a model of quantitative nature in which the transitions of the sy
 Note that all probabilistic data is internal, and the environment is assumed to be deterministic. That is to say, the model is reactive: we are only concerned with how the model reacts, i.e., what an external observer can see. What does it mean for two systems to be equivalent in this case? 
 
 **Example 6.** Consider the two following systems: 
-(add picture 3) Are the states $s_0$ and $t_0$ equivalent? Intuively, they have the same behaviour: $s_2$ and $s_3$ behave in the same way $t_2$, and the probability landing in $s_2$ or $s_3$ is the same as landing in $t_2$. This motivates the following notion of equivalence:
+
+![Example 6](figures/fig3.svg)
+
+Are the states $s_0$ and $t_0$ equivalent? Intuively, they have the same behaviour: $s_2$ and $s_3$ behave in the same way $t_2$, and the probability landing in $s_2$ or $s_3$ is the same as landing in $t_2$. This motivates the following notion of equivalence:
 
 **Definition 7** [Larsen and Skou] **.** We say $\sim_{LS}$ is a bisimulation relation if whenever $s \sim_{LS} t$ then for any $C \in S/ \sim_{LS}$ we have 
 $$\sum_{v \in C} P_a(s, v) = \sum_{v \in C} P_a(t, v).$$
@@ -59,7 +62,11 @@ $$\sum_{v \in C} P_a(s, v) = \sum_{v \in C} P_a(t, v).$$
 
 We have previously defined bisimulation, a notion of equivalence for transition systems. Is there an alternative way to think of equivalance? Can we empirically `test' whether two systems are equivalent? We can do so by thinking of the logical formulas the systems satisfy: if we can find one formula which is satisfied by one system but not the other, than the systems are not equivalent.
 
-**Example 8.** Consider the following two discrete systems: (add picture 4) Clearly, the formula $\left<a\right> \lnot \left<b\right> \top$ distinguishes between $S$ and $T$, and hints to the fact that we cannot get by without negation. Indeed, there there is no negation-free logic that can characterise bisimulation in this case. One logic that does characterise it is the Hennessey-Milner logic:
+**Example 8.** Consider the following two discrete systems: 
+
+![Example 8](figures/fig4.svg)
+
+Clearly, the formula $\left<a\right> \lnot \left<b\right> \top$ distinguishes between $S$ and $T$, and hints to the fact that we cannot get by without negation. Indeed, there there is no negation-free logic that can characterise bisimulation in this case. One logic that does characterise it is the Hennessey-Milner logic:
 $$\mathcal{L}_{HM} := \top \mid \lnot \phi \mid \phi_1 \land \phi_2 \mid \left<a\right> \phi$$ 
 where $s \vDash \left<a\right> \phi$ means that there is an $a$-action from the state $s$ to a state $s'$ which satisfies $\phi$.
 
@@ -68,7 +75,7 @@ We would expect the situation to become more complicated when we move to continu
 
 **Example 9.** Let's reconsider the example above, this time adding probabilities to transitions: for $S$, suppose that the two $a$-actions have probabilities $p$ and $q$ respectively, and the $b$-action has probability $1$; for $R$, the $a$-action has probability $r$ and the $b$-action probability $1$.
 
-(add picture 5)
+![Example 1](figures/fig5.svg)
 
 If $p = 0$, then $S$ and $T$ are in fact equivalent. So assume $p \neq 0$.
 
