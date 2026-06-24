@@ -1,6 +1,8 @@
 (Based on *Bisimulation for Labelled Markov processes* by J. Desharnais, A. Edalat, and P. Panangaden.)
 
-- [ ] todo: probably remove this summary, and add some questions instead
+To do:
+- [ ] probably remove the summary in the introduction and add some questions instead
+- [ ] check if figures render properly
 
 After reviewing the classical notions of transition systems and bisimulation equivalence, we make a case for a continuous state space model (Labelled Markov Processes) and generalise the previous notion of bisimulation. Along the way, we will need to introduce measure theoretic tools. In the end, we discuss a rather unexpected logical characterisation of bisimulation for LMPs.
 
