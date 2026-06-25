@@ -78,9 +78,9 @@ $$
 \sqrt{\frac{\beta}{\pi}}\int_{s}^{t}\exp(-\beta(x-x_{0})^{2})dx
 $$
 
-In this system, an $a$-transition from a state $(x_{0},y_{0})$ to $(x_{1},y_{0})$ occurs with zero probability. Therefore it is not possible to define transition probabilities between states; instead, we should consider transition probabilities from a state to a set of states. Indeed, singletons are no longer the "atomic building blocks" as in the discrete case, in which the probability of transitioning from a state to a set of states is nothing but the sum of the transition probabilities of each state in the target set. Thus, given an initial state and a label, we should consider assigning a transition probability to subsets of the state space.
+In this system, an $a$-transition from a state $(x_{0},y_{0})$ to $(x_{1},y_{0})$ occurs with zero probability. Therefore it is not possible to define transition probabilities between states; instead, we should consider transition probabilities from a state to a set of states. Indeed, singletons are no longer the "atomic building blocks" as in the discrete case, in which the probability of transitioning from a state to a set of states is nothing but the sum of the transition probabilities of each state in the target set. Thus, given an initial state and a label, we should consider assigning a transition probability to each subset of the state space.
 
-Unfortunately, this will fail if we try to make it work for all subsets of a continuous state space because not all subsets are going to be well-behaved enough to be assigned a probability. This is a more general problem; if our goal is to assign a proper notion of "size", say volume, area, length, or probability, to each subset of a given set, then we need to work with measure theory. First, let us define the well-behaved sets we mentioned earlier.
+Unfortunately, this will fail if we try to make it work for all subsets of a continuous state space because not all subsets are going to be well-behaved enough to be assigned a probability. This is a more general problem; if our goal is to assign a proper notion of "size", say volume, area, length, or probability, to subsets of a given set, then we need to work with measure theory. First, let us define these well-behaved sets.
 
 **Definition:** A $\sigma$-algebra on a set $X$ is a collection of subsets of $X$ that contains $X$, is closed under taking complements, and is closed under countable union.
 
@@ -94,17 +94,17 @@ Here is how we formally assign "sizes" to these well-behaved sets.
 
 An immediate property that can be concluded from this definition is that a measure is monotone: $A\subset B\Rightarrow\mu(A)\le\mu(B)$.
 
-The Lebesgue measure on $\mathbb{R}$ is a well-known measure which is defined as follows. First of all, given an interval $I=[a,b]$, its length is defined as $l(I)=b-a$.
+The *Lebesgue measure* on $\mathbb{R}$ is a well-known measure, which can be thought of as an extension of the length function on intervals. It is defined as follows. First of all, given an interval $I=[a,b]$, its length is defined as $l(I)=b-a$.
 
-**Definition:** Given $E \subset \mathbb{R}$, the Lebesgue outer measure $m^\ast(E)$ is defined as:
+**Definition:** Given $E \subset \mathbb{R}$, the *Lebesgue outer measure* $m^\ast(E)$ is defined as:
 
 $$
 \inf \left\lbrace \sum_{k=1}^{\infty}l(I_{k}) : E \subset \bigcup_{k=1}^{\infty}I_{k} \text{ where } I_{k} \text{ is an open interval for all } k \in \mathbb{N} \right\rbrace
 $$
 
-Now, we restrict $m^\ast$ to subsets $E$ of $\mathbb{R}$ which satisfy $m^\ast(A)=m^\ast(A\cap E)+m^\ast(A\cap E^{c})$ for all $A\subset\mathbb{R}$. These sets are called Lebesgue measurable sets and such sets constitute a $\sigma$-algebra. In addition, the restricted $m^\ast$ becomes a measure, called the Lebesgue measure. It is translation invariant, that is, $m(E+x)=m(E)$ for any $x\in\mathbb{R}$ and Lebesgue measurable set $E$.
+Now, we restrict $m^\ast$ to subsets $E$ of $\mathbb{R}$ which satisfy $m^\ast(A)=m^\ast(A\cap E)+m^\ast(A\cap E^{c})$ for all $A\subset\mathbb{R}$. These sets are called *Lebesgue measurable* sets and such sets form a $\sigma$-algebra. In addition, the restricted $m^\ast$ becomes a measure, called the *Lebesgue measure*. It is translation invariant, that is, $m(E+x)=m(E)$ for any $x\in\mathbb{R}$ and any Lebesgue measurable set $E$.
 
-Now, we are ready to give an example of a set in $\mathbb{R}$ for which we can't assign a "size", or now that we know what size means, a measure. In other words, we will now construct a set $V$ which is not Lebesgue measurable, assuming the axiom of choice. It is called the Vitali set.
+Now, we are ready to give an example of a set in $\mathbb{R}$ for which we can't assign a "size", or now that we know what size means, a measure. In other words, we will construct a set $V$ which is not Lebesgue measurable, assuming the axiom of choice. It is called the *Vitali set.*
 
 Define the equivalence relation on $[0, 1]$ by $x \sim y$ iff $x - y \in \mathbb{Q}$. This partitions $\mathbb{R}$ into uncountably many equivalence classes $[x] = (\mathbb{Q} + x) \cap [0, 1]$ and invoking the axiom of choice we can choose one representative from each class and collect them to form a set $V$. For the sake of contradiction, suppose $V$ is Lebesgue measurable. So, we can safely assume $m(V)$ is a non-negative real number. Now, enumerate $\mathbb{Q} = (q\_k)\_{k \geq 1}$ and consider translations $V\_k = V + q\_k$. Notice that these sets are pairwise disjoint and also $m(V\_k) = m(V)$ for each $k$. Letting $U = \bigcup\_{k \geq 1} V\_k$, we arrive at the following conclusion:
 
